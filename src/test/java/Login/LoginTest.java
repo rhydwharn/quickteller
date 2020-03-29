@@ -13,14 +13,20 @@ public class LoginTest {
 
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://quickteller.com/");
+        driver.get("https://www.ebulksms.com/signup/");
         Thread.sleep(7000);
         System.out.println(driver.getTitle());
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.findElement(By.className("btn__login")).click();
-        driver.findElement(By.xpath("//input[@name='username']")).sendKeys("ridwan.abdulazeez1@gmail.com");
-        driver.findElement(By.xpath("//input[@id='accountLoginFormPassword']")).sendKeys("Labibah1.");
-        driver.findElement(By.xpath("//button[@id='accountLoginFormButton']")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+        driver.findElement(By.id("UserEmail")).sendKeys("ridwana@mailinator.com");
+        driver.findElement(By.id("UserConfemail")).sendKeys("ridwana@mailinator.com");
+        driver.findElement(By.id("UserUserpass")).sendKeys("Labibah2341241");
+        driver.findElement(By.id("UserFirstname")).sendKeys("testinge");
+        driver.findElement(By.id("UserLastname")).sendKeys("tester");
+        driver.findElement(By.id("UserMobilenumber")).sendKeys("08123456789");
+        driver.findElement(By.id("UserAcceptterms")).click();
+        driver.findElement(By.className("submit")).click();
     }
 
     public static void main(String args[]) throws InterruptedException {
