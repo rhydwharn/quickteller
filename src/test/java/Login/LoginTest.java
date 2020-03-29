@@ -13,15 +13,14 @@ public class LoginTest {
 
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://monosnap.com/");
+        driver.get("https://quickteller.com/");
         Thread.sleep(7000);
         System.out.println(driver.getTitle());
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElement(By.className("btnAccept")).click();
-        driver.findElement(By.className("headButton")).click();
-        driver.findElement(By.xpath("//input[@class='w-100 textInput in']")).sendKeys("ridwan.abdulazeez1@gmail.com");
-        driver.findElement(By.xpath("//input[@class='w-100 textInput']")).sendKeys("Labibah1.");
-        driver.findElement(By.xpath("//button[@class='login']")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.findElement(By.className("btn__login")).click();
+        driver.findElement(By.xpath("//input[@name='username']")).sendKeys("ridwan.abdulazeez1@gmail.com");
+        driver.findElement(By.xpath("//input[@id='accountLoginFormPassword']")).sendKeys("Labibah1.");
+        driver.findElement(By.xpath("//button[@id='accountLoginFormButton']")).click();
     }
 
     public static void main(String args[]) throws InterruptedException {
